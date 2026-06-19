@@ -158,6 +158,40 @@
         'secondary': 'https://cdn.salla.sa/gZrqEE/ccc34150-e20f-4e2b-bcb7-b33769ebe92f-500x500-KtOJymigdDp6FG3K1hkcKJXB5ifnxNHIhkk15EQY.jpg'
     }
 ] %}
+{% set tafaseel_palettes = [
+    {
+        'title': 'أزرق ضبابي',
+        'text': 'مناسب للمكاتب وغرف الجلوس الهادئة عندما تحتاج المساحة برودة بصرية.',
+        'url': '#tafaseel-abstract',
+        'primary': '#6fbfce',
+        'secondary': '#eaf6f8',
+        'accent': '#24323a'
+    },
+    {
+        'title': 'وردي ناعم',
+        'text': 'اختيار دافئ لغرف النوم والزوايا التي تحتاج حضورًا أخف.',
+        'url': '#tafaseel-floral',
+        'primary': '#d9a9a7',
+        'secondary': '#fff3f1',
+        'accent': '#7f5e5b'
+    },
+    {
+        'title': 'جرافيت وفحم',
+        'text': 'يناسب المداخل والمجالس عندما تكون القطعة المحورية هي الهدف.',
+        'url': '#tafaseel-horses',
+        'primary': '#101820',
+        'secondary': '#d7e2e4',
+        'accent': '#6f7f86'
+    },
+    {
+        'title': 'حجري محايد',
+        'text': 'للصالات الواسعة وجدران التلفاز التي تحتاج توازنًا مع الأثاث.',
+        'url': '#tafaseel-large',
+        'primary': '#a8745f',
+        'secondary': '#f5f8f8',
+        'accent': '#314046'
+    }
+] %}
 
 <section class="tafaseel-identity" aria-labelledby="tafaseel-identity-title">
     <div class="container tafaseel-identity__inner">
@@ -203,6 +237,28 @@
                         <em>{{ space.meta }}</em>
                         <span>{{ space.text }}</span>
                     </span>
+                </a>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<section class="tafaseel-palette-finder" aria-labelledby="tafaseel-palette-title">
+    <div class="container">
+        <div class="tafaseel-palette-finder__head" data-tafaseel-reveal>
+            <h2 id="tafaseel-palette-title">اختر اللوحة من لون الغرفة.</h2>
+            <p>مسار سريع للعميل الذي يعرف أجواء المساحة قبل أن يعرف اسم التصنيف.</p>
+        </div>
+        <div class="tafaseel-palette-finder__grid">
+            {% for palette in tafaseel_palettes %}
+                <a class="tafaseel-palette-card tafaseel-motion-card" href="{{ palette.url }}" style="--palette-primary: {{ palette.primary }}; --palette-secondary: {{ palette.secondary }}; --palette-accent: {{ palette.accent }};" data-tafaseel-reveal>
+                    <span class="tafaseel-palette-card__swatches" aria-hidden="true">
+                        <i></i>
+                        <i></i>
+                        <i></i>
+                    </span>
+                    <strong>{{ palette.title }}</strong>
+                    <span>{{ palette.text }}</span>
                 </a>
             {% endfor %}
         </div>
