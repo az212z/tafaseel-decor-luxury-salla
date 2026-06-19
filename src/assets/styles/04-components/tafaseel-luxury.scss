@@ -100,13 +100,14 @@
     }
 
     a,
-    button {
-      color: inherit;
+    button,
+    span {
+      color: inherit !important;
+      text-decoration: none !important;
     }
 
     salla-contacts {
-      color: rgba(255, 255, 255, 0.82);
-      font-weight: 800;
+      display: none !important;
     }
   }
 
@@ -115,10 +116,16 @@
     border-bottom: 1px solid rgba(16, 24, 32, 0.08);
     box-shadow: 0 18px 48px rgba(16, 24, 32, 0.07);
     backdrop-filter: blur(18px);
+    min-height: 82px;
 
     &.fixed-header .inner {
       background: rgba(255, 255, 255, 0.9);
       backdrop-filter: blur(18px);
+    }
+
+    .container > .flex {
+      min-height: 82px;
+      align-items: center;
     }
   }
 
@@ -129,6 +136,10 @@
 
   custom-main-menu > nav,
   .main-menu {
+    display: none !important;
+  }
+
+  .tafaseel-menu-fallback {
     display: flex;
     align-items: center;
     gap: clamp(14px, 2vw, 26px);
@@ -162,6 +173,24 @@
     color: var(--tafaseel-ink);
   }
 
+  salla-user-menu,
+  salla-cart-summary,
+  .s-user-menu-trigger,
+  .header-btn__icon {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  .s-user-menu-trigger,
+  salla-cart-summary {
+    min-width: 44px;
+    min-height: 44px;
+    border: 1px solid rgba(16, 24, 32, 0.1);
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.72);
+  }
+
   salla-search {
     --s-search-border-color: rgba(16, 24, 32, 0.1);
     --s-search-border-radius: 999px;
@@ -179,7 +208,8 @@
   }
 
   @media (min-width: 1024px) {
-    .store-header .lg\:hidden {
+    .store-header .lg\:hidden,
+    .store-header .mburger {
       display: none !important;
     }
   }
