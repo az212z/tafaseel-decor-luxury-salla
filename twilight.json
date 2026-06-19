@@ -289,6 +289,24 @@
     ],
     "components": [
         {
+            "key": "7f7d9c90-7863-4d70-97d5-8974733e5712",
+            "title": {
+                "en": "Tafaseel Decor Hero",
+                "ar": "واجهة تفاصيل الديكور"
+            },
+            "icon": "sicon-store2",
+            "path": "home.tafaseel-hero",
+            "image": "https://raw.githubusercontent.com/az212z/tafaseel-decor-twilight/master/public/images/tafaseel/hero.jpg",
+            "fields": [
+                {
+                    "type": "static",
+                    "format": "description",
+                    "id": "tafaseel-hero-preview",
+                    "value": "<div><img class='w-full' src='https://raw.githubusercontent.com/az212z/tafaseel-decor-twilight/master/public/images/tafaseel/hero.jpg'><h6>واجهة تفاصيل الديكور</h6><p>هيرو فاخر جاهز للواجهة الرئيسية مع تصنيفات سريعة، صور ديكورية، أزرار شراء وتواصل، وحركة دخول ناعمة مناسبة لهوية المتجر.</p></div>"
+                }
+            ]
+        },
+        {
             "key": "186b3f4f-25cf-4d3c-abca-cef7eed6f0ab",
             "title": {
                 "en": "Enhances Animated Images",
