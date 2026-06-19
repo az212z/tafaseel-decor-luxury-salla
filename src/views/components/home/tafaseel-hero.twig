@@ -2,7 +2,7 @@
 {% set tafaseel_whatsapp_clean = tafaseel_whatsapp|replace({'+':'', ' ':'', '-':'', '(':'', ')':''}) %}
 {% set tafaseel_component = component is defined ? component : null %}
 {% set tafaseel_title = tafaseel_component and tafaseel_component.hero_title ? tafaseel_component.hero_title : 'تفاصيل الديكور' %}
-{% set tafaseel_description = tafaseel_component and tafaseel_component.hero_description ? tafaseel_component.hero_description : 'لوحات جدارية وورق حائط مصممة لتصنع نقطة جذب هادئة في البيت والمكتب، بخامات واضحة وضمان ألوان يصل إلى 3 سنوات.' %}
+{% set tafaseel_description = tafaseel_component and tafaseel_component.hero_description ? tafaseel_component.hero_description : 'لوحات جدارية وورق حائط بتفاصيل هادئة، خامات كانفس مقاومة، وضمان ألوان 3 سنوات.' %}
 {% set tafaseel_hero_image = tafaseel_component and tafaseel_component.hero_image ? tafaseel_component.hero_image : 'images/tafaseel/room.jpg' | asset %}
 {% set tafaseel_accent_image = tafaseel_component and tafaseel_component.accent_image ? tafaseel_component.accent_image : 'images/tafaseel/product-floral-01.jpg' | asset %}
 {% set tafaseel_tall_image = tafaseel_component and tafaseel_component.tall_image ? tafaseel_component.tall_image : 'images/tafaseel/product-horse-01.jpg' | asset %}
@@ -13,6 +13,7 @@
     <div class="tafaseel-hero__bg" aria-hidden="true"></div>
     <div class="container tafaseel-hero__inner">
         <div class="tafaseel-hero__copy" data-tafaseel-reveal>
+            <span class="tafaseel-kicker tafaseel-kicker--light">Decoration Details</span>
             <h1>{{ tafaseel_title }}</h1>
             <p>{{ tafaseel_description }}</p>
             <div class="tafaseel-hero__actions">
@@ -23,6 +24,11 @@
                 <a class="tafaseel-btn tafaseel-btn--ghost" href="https://wa.me/{{ tafaseel_whatsapp_clean }}" rel="noopener" target="_blank">
                     <span>{{ tafaseel_secondary_label }}</span>
                 </a>
+            </div>
+            <div class="tafaseel-hero__proof" aria-label="مزايا تفاصيل الديكور">
+                <span>كانفس مقاوم للرطوبة</span>
+                <span>ضمان ألوان 3 سنوات</span>
+                <span>مقاسات متعددة</span>
             </div>
         </div>
 
@@ -42,11 +48,11 @@
 
 <section class="tafaseel-category-strip" aria-label="تصنيفات تفاصيل الديكور" data-tafaseel-reveal>
     <div class="container tafaseel-category-strip__inner">
-        <a href="#tafaseel-collection">الورد</a>
-        <a href="#tafaseel-collection">تجريدي</a>
-        <a href="#tafaseel-collection">خيول</a>
-        <a href="#tafaseel-collection">ورق الحائط</a>
-        <a href="#tafaseel-collection">لوحات حجم كبير</a>
+        <a href="#tafaseel-floral">الورد</a>
+        <a href="#tafaseel-abstract">تجريدي</a>
+        <a href="#tafaseel-horses">خيول</a>
+        <a href="#tafaseel-wallpaper">ورق الحائط</a>
+        <a href="#tafaseel-large">لوحات حجم كبير</a>
     </div>
 </section>
 

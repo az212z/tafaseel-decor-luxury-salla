@@ -24,5 +24,6 @@ yarn.lock
 report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
 
 .DS_Store
+output/
 
 .playwright-cli/

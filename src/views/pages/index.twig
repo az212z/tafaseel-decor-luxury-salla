@@ -13,6 +13,8 @@
         {% include 'components.home.tafaseel-hero' %}
     {% endif %}
 
+    {% include 'components.home.tafaseel-products' %}
+
     {% component home %}
 
     <section class="tafaseel-quality">
@@ -29,8 +31,8 @@
             </article>
             <article data-tafaseel-reveal>
                 <i class="sicon-image" aria-hidden="true"></i>
-                <h3>هوية بصرية</h3>
-                <p>مظهر أقرب لمعرض ديكور حديث، مع صور كبيرة ومساحات قراءة مريحة.</p>
+                <h3>هوية بصرية جديدة</h3>
+                <p>لغة بصرية باردة وفاخرة تجعل اللوحات وورق الحائط محور الصفحة.</p>
             </article>
             <article data-tafaseel-reveal>
                 <i class="sicon-chat" aria-hidden="true"></i>
@@ -48,7 +50,7 @@
             <div class="tafaseel-studio__copy" data-tafaseel-reveal>
                 {% set tafaseel_whatsapp = store.contacts.whatsapp ?? store.contacts.mobile ?? '966558113005' %}
                 {% set tafaseel_whatsapp_clean = tafaseel_whatsapp|replace({'+':'', ' ':'', '-':'', '(':'', ')':''}) %}
-                <h2>متجر يبدو كاختيار مصمم داخلي، وليس كقائمة منتجات عادية.</h2>
+                <h2>متجر يبدو كاختيار مصمم داخلي، لا كقائمة منتجات عادية.</h2>
                 <p>
                     اختر القطعة حسب طابع المساحة: ورد ناعم لغرف المعيشة، تجريدي للمداخل
                     الحديثة، وخيارات خيول وورق حائط للمساحات التي تحتاج حضورًا أقوى.

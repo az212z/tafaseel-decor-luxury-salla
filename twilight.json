@@ -303,7 +303,7 @@
                     "type": "static",
                     "format": "description",
                     "id": "tafaseel-hero-preview",
-                    "value": "<div><img class='w-full' src='https://raw.githubusercontent.com/az212z/tafaseel-decor-luxury-salla/master/src/assets/images/tafaseel/hero.jpg'><h6>واجهة تفاصيل الديكور</h6><p>هيرو فاخر جاهز للواجهة الرئيسية مع تصنيفات سريعة، صور ديكورية، أزرار شراء وتواصل، وحركة دخول ناعمة مناسبة لهوية المتجر.</p></div>"
+                    "value": "<div><img class='w-full' src='https://raw.githubusercontent.com/az212z/tafaseel-decor-luxury-salla/master/src/assets/images/tafaseel/hero.jpg'><h6>واجهة تفاصيل الديكور</h6><p>واجهة باردة وفاخرة للمتجر مع تصنيفات سريعة، صور ديكورية، أزرار شراء وتواصل، وحركة دخول ناعمة مناسبة لهوية تفاصيل الجديدة.</p></div>"
                 },
                 {
                     "type": "string",
@@ -323,7 +323,7 @@
                     "label": "وصف الواجهة",
                     "multilanguage": true,
                     "id": "hero_description",
-                    "value": "لوحات جدارية وورق حائط مصممة لتصنع نقطة جذب هادئة في البيت والمكتب، بخامات واضحة وضمان ألوان يصل إلى 3 سنوات.",
+                    "value": "لوحات جدارية وورق حائط بتفاصيل هادئة، خامات كانفس مقاومة، وضمان ألوان 3 سنوات.",
                     "required": false,
                     "format": "textarea",
                     "minLength": 0,

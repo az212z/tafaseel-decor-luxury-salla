@@ -79,11 +79,11 @@
     {% hook 'head:start' %}
     {% hook head %}
     {% if is_page('index') %}
-        <meta name="description" content="{{ store.name }} يقدم لوحات جدارية، لوحات كانفاس، وورق حائط فاخر بتصاميم عصرية ومقاسات متعددة للبيت والمكتب.">
-        <meta name="keywords" content="تفاصيل الديكور, لوحات جدارية, لوحات كانفاس, ورق حائط, ديكور منزلي, لوحات خيول, لوحات ورد">
+        <meta name="description" content="{{ store.name }} يقدم لوحات جدارية فاخرة، لوحات كانفس مقاومة للرطوبة، وورق حائط عصري بمقاسات متعددة للبيت والمكتب.">
+        <meta name="keywords" content="تفاصيل الديكور, لوحات جدارية, لوحات كانفاس, ورق حائط, ديكور منزلي, لوحات خيول, لوحات ورد, لوحات تجريدية, خط عربي">
         <meta property="og:type" content="website">
         <meta property="og:title" content="{{ store.name }} | لوحات جدارية وورق حائط فاخر">
-        <meta property="og:description" content="اختيارات ديكور عصرية للبيت والمكتب: لوحات ورد، تجريدي، خيول، وورق حائط بمظهر راق ومقاسات متعددة.">
+        <meta property="og:description" content="اختيارات ديكور عصرية للبيت والمكتب: لوحات ورد، تجريدي، خيول، خط عربي، وورق حائط بمظهر راق.">
         <meta property="og:url" content="{{ store.url }}">
         <meta property="og:image" content="{{ store.logo|cdn(600) }}">
         <script type="application/ld+json">
@@ -93,9 +93,25 @@
                 "name": {{ store.name|json_encode|raw }},
                 "url": {{ store.url|json_encode|raw }},
                 "logo": {{ store.logo|cdn(600)|json_encode|raw }},
-                "description": "لوحات جدارية وورق حائط فاخر بتصاميم عصرية ومقاسات متعددة.",
+                "description": "لوحات جدارية فاخرة، لوحات كانفس، وورق حائط بتصاميم عصرية ومقاسات متعددة.",
                 "telephone": {{ (store.contacts.mobile ?? store.contacts.phone ?? '')|json_encode|raw }},
-                "email": {{ (store.contacts.email ?? '')|json_encode|raw }}
+                "email": {{ (store.contacts.email ?? '')|json_encode|raw }},
+                "sameAs": [
+                    {{ (store.social.instagram ?? '')|json_encode|raw }},
+                    {{ (store.social.snapchat ?? '')|json_encode|raw }},
+                    {{ (store.social.tiktok ?? '')|json_encode|raw }}
+                ],
+                "hasOfferCatalog": {
+                    "@type": "OfferCatalog",
+                    "name": "مجموعات تفاصيل الديكور",
+                    "itemListElement": [
+                        {"@type": "OfferCatalog", "name": "لوحات ورد"},
+                        {"@type": "OfferCatalog", "name": "لوحات تجريدية"},
+                        {"@type": "OfferCatalog", "name": "لوحات خيول"},
+                        {"@type": "OfferCatalog", "name": "ورق حائط"},
+                        {"@type": "OfferCatalog", "name": "لوحات خط عربي"}
+                    ]
+                }
             }
         </script>
     {% endif %}

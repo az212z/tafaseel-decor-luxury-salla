@@ -1,0 +1,169 @@
+{% set tafaseel_whatsapp = store.contacts.whatsapp ?? store.contacts.mobile ?? '966558113005' %}
+{% set tafaseel_whatsapp_clean = tafaseel_whatsapp|replace({'+':'', ' ':'', '-':'', '(':'', ')':''}) %}
+{% set tafaseel_categories = [
+    {
+        'id': 'tafaseel-floral',
+        'name': 'الورد',
+        'title': 'ورد هادئ لغرف المعيشة',
+        'text': 'لوحات كانفس بنعومة واضحة للمساحات التي تحتاج دفء من غير ازدحام.',
+        'image': 'https://cdn.salla.sa/form-builder/j87blJWBWzBc0P0ldpore5Wru4dTU4YyY1Fayumi.jpg'
+    },
+    {
+        'id': 'tafaseel-abstract',
+        'name': 'تجريدي',
+        'title': 'تكوينات حديثة للمداخل',
+        'text': 'اختيارات تجريدية تناسب المكاتب، الصالات، والجدران الواسعة.',
+        'image': 'https://cdn.salla.sa/gZrqEE/665ff406-4447-4270-8055-801ea2d199b6-500x500-6uDeHYKYK5jBDDxvt81AFT91WYovJVCanWJnmdds.jpg'
+    },
+    {
+        'id': 'tafaseel-horses',
+        'name': 'خيول',
+        'title': 'حضور قوي بلا صخب',
+        'text': 'لوحات خيول بتكوينات فنية تعطي الجدار شخصية أوضح.',
+        'image': 'https://cdn.salla.sa/form-builder/uB7KEIaMw31tQxhgVstfO66JIpYCj73nOm5qogWz.jpg'
+    },
+    {
+        'id': 'tafaseel-wallpaper',
+        'name': 'ورق الحائط',
+        'title': 'خلفيات تصنع المشهد',
+        'text': 'ورق حائط بتفاصيل مناسبة للجدران الكبيرة وغرف الضيافة.',
+        'image': 'https://cdn.salla.sa/gZrqEE/ccc34150-e20f-4e2b-bcb7-b33769ebe92f-500x500-KtOJymigdDp6FG3K1hkcKJXB5ifnxNHIhkk15EQY.jpg'
+    }
+] %}
+{% set tafaseel_products = [
+    {
+        'anchor': 'tafaseel-floral',
+        'category': 'الورد',
+        'title': 'لوحة ورد جدارية',
+        'subtitle': 'كانفس مقاوم للرطوبة مع ضمان ألوان 3 سنوات',
+        'url': 'https://decorationdetails.com/لوحة-جدارية/p1960654971',
+        'image': 'https://cdn.salla.sa/gZrqEE/1e65f02a-7119-431f-ac15-e00fa4d08908-500x498.86363636364-7BWHNVo87rNG36T7ZrR5G2HApHnOWeo6pxbgpt0N.jpg'
+    },
+    {
+        'anchor': 'tafaseel-abstract',
+        'category': 'تجريدي',
+        'title': 'لوحة فنية تجريدية',
+        'subtitle': 'تكوين حديث للمداخل والمكاتب وغرف الضيافة',
+        'url': 'https://decorationdetails.com/لوحة-فنية/p761812267',
+        'image': 'https://cdn.salla.sa/gZrqEE/665ff406-4447-4270-8055-801ea2d199b6-500x500-6uDeHYKYK5jBDDxvt81AFT91WYovJVCanWJnmdds.jpg'
+    },
+    {
+        'anchor': 'tafaseel-horses',
+        'category': 'خيول',
+        'title': 'لوحة خيل فنية',
+        'subtitle': 'حضور بصري قوي لمساحات الاستقبال والجدران الكبيرة',
+        'url': 'https://decorationdetails.com/لوحة-فنية/p794573527',
+        'image': 'https://cdn.salla.sa/gZrqEE/07b2e16f-9186-4ced-9e8d-0eacefb7a064-500x500-vOgwn6Waw6Cg3TPst7qbWkhMdBLi1HS4R1gSRHRk.jpg'
+    },
+    {
+        'anchor': 'tafaseel-wallpaper',
+        'category': 'ورق الحائط',
+        'title': 'ورق حائط فاخر',
+        'subtitle': 'خيار مناسب لتحويل الجدار إلى خلفية ديكور مكتملة',
+        'url': 'https://decorationdetails.com/ورق-حائط/p800021141',
+        'image': 'https://cdn.salla.sa/gZrqEE/ccc34150-e20f-4e2b-bcb7-b33769ebe92f-500x500-KtOJymigdDp6FG3K1hkcKJXB5ifnxNHIhkk15EQY.jpg'
+    },
+    {
+        'anchor': 'tafaseel-arabic',
+        'category': 'خط عربي',
+        'title': 'لوحات خط عربي',
+        'subtitle': 'تفاصيل هادئة للصالات والمداخل بطابع عربي معاصر',
+        'url': 'https://decorationdetails.com/لوحات-جدارية/p1600485683',
+        'image': 'https://cdn.salla.sa/gZrqEE/26a3c315-f8c1-4805-8c18-6823aa60bdd4-500x496.9696969697-RSyzcda52gwLPZNZNJtb0GDMsqT7ZwqgDkPwAxdz.jpg'
+    },
+    {
+        'anchor': 'tafaseel-large',
+        'category': 'لوحات كبيرة',
+        'title': 'لوحة جدارية كبيرة',
+        'subtitle': 'قطعة محورية للمساحات الواسعة وغرف الجلوس الرسمية',
+        'url': 'https://decorationdetails.com/لوحة-جدارية/p204327651',
+        'image': 'https://cdn.salla.sa/gZrqEE/64cc7fb0-ccb1-4bb8-ac2f-1e63e8c4fa02-500x500-XS6J6gCt8vtJgt9IC71ad2MpO5WatzVPSMOFxew8.jpg'
+    }
+] %}
+
+<section class="tafaseel-identity" aria-labelledby="tafaseel-identity-title">
+    <div class="container tafaseel-identity__inner">
+        <div class="tafaseel-identity__copy" data-tafaseel-reveal>
+            <span class="tafaseel-kicker">هوية تفاصيل الجديدة</span>
+            <h2 id="tafaseel-identity-title">جدار هادئ، حضور واضح، ولمعة باردة تشبه المعارض الحديثة.</h2>
+            <p>
+                الهوية تجمع بين الأزرق الضبابي، الجرافيت العميق، والأبيض الحجري حتى تبدو
+                المنتجات أكثر نقاء، وتبقى تجربة التسوق مناسبة للبيت، المكتب، والمحل.
+            </p>
+        </div>
+        <div class="tafaseel-identity__tokens" aria-hidden="true" data-tafaseel-reveal>
+            <span class="tafaseel-token tafaseel-token--night"></span>
+            <span class="tafaseel-token tafaseel-token--mist"></span>
+            <span class="tafaseel-token tafaseel-token--ice"></span>
+            <span class="tafaseel-token tafaseel-token--clay"></span>
+        </div>
+    </div>
+</section>
+
+<section class="tafaseel-categories" aria-labelledby="tafaseel-categories-title">
+    <div class="container">
+        <div class="tafaseel-section-head" data-tafaseel-reveal>
+            <span class="tafaseel-kicker">تسوق حسب أجواء المساحة</span>
+            <h2 id="tafaseel-categories-title">كل مجموعة لها إحساسها، وكل جدار له اختيار مناسب.</h2>
+        </div>
+        <div class="tafaseel-categories__grid">
+            {% for category in tafaseel_categories %}
+                <a class="tafaseel-category-card tafaseel-motion-card" href="#{{ category.id }}" data-tafaseel-reveal>
+                    <img src="{{ category.image }}" alt="{{ category.title }}" loading="lazy">
+                    <span>{{ category.name }}</span>
+                    <h3>{{ category.title }}</h3>
+                    <p>{{ category.text }}</p>
+                    <i class="sicon-keyboard_arrow_left" aria-hidden="true"></i>
+                </a>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<section class="tafaseel-curated-products" aria-labelledby="tafaseel-products-title">
+    <div class="container">
+        <div class="tafaseel-section-head tafaseel-section-head--split" data-tafaseel-reveal>
+            <div>
+                <span class="tafaseel-kicker">منتجات حقيقية من المتجر</span>
+                <h2 id="tafaseel-products-title">مختارات واجهة فاخرة من تفاصيل الديكور.</h2>
+            </div>
+            <a class="tafaseel-link" href="https://wa.me/{{ tafaseel_whatsapp_clean }}" rel="noopener" target="_blank">
+                مساعدة في اختيار المقاس
+                <i class="sicon-keyboard_arrow_left" aria-hidden="true"></i>
+            </a>
+        </div>
+        <div class="tafaseel-products-grid">
+            {% for product in tafaseel_products %}
+                <article id="{{ product.anchor }}" class="tafaseel-product-card" data-tafaseel-reveal>
+                    <a class="tafaseel-product-card__image" href="{{ product.url }}" aria-label="{{ product.title }}">
+                        <img src="{{ product.image }}" alt="{{ product.title }}" loading="lazy">
+                    </a>
+                    <div class="tafaseel-product-card__body">
+                        <span>{{ product.category }}</span>
+                        <h3>{{ product.title }}</h3>
+                        <p>{{ product.subtitle }}</p>
+                        <div class="tafaseel-product-card__footer">
+                            <strong>السعر حسب المقاس</strong>
+                            <a href="{{ product.url }}">
+                                عرض التفاصيل
+                                <i class="sicon-keyboard_arrow_left" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<section class="tafaseel-live-products container" aria-label="منتجات مختارة من سلة" data-tafaseel-reveal>
+    <div class="tafaseel-live-products__frame">
+        <salla-products-slider
+            source="selected"
+            source-value="[196185830,95892278,2027503937,1105613328,1168091433,1242572484,1723490227,280435721]"
+            block-title="تسوق المختارات مباشرة من سلة"
+            block-subTitle="الأسعار والمخزون والخيارات تأتي من كتالوج المتجر."
+            slider-id="tafaseel-real-store-products"
+        ></salla-products-slider>
+    </div>
+</section>
