@@ -4,6 +4,12 @@
 | products        | Products[] |                                |
 | position        | Int        | Sorting number start from zero |
 #}
+{% set hero_enabled = theme.settings.get('tafaseel_hero_enabled', true) %}
+{% if hero_enabled and not theme.settings.get('tafaseel_hero_rendered', false) %}
+    {% include 'components.home.tafaseel-hero' %}
+    {% set _tafaseel_hero_rendered = theme.settings.set('tafaseel_hero_rendered', true) %}
+{% endif %}
+
 <section class="s-block s-block--latest-products container mt-6 sm:mt-8">
     <div class="s-block__title">
       <h2>{{ trans('blocks.home.latest_products') }}</h2>

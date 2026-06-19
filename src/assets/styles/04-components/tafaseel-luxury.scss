@@ -1,4 +1,4 @@
-.theme-tafaseel-luxury {
+:root {
   --tafaseel-ink: #101820;
   --tafaseel-ink-soft: #27343e;
   --tafaseel-mist: #b8dce2;
@@ -9,7 +9,9 @@
   --tafaseel-shadow: 0 24px 70px rgba(16, 24, 32, 0.12);
   --tafaseel-ease-out: cubic-bezier(0.23, 1, 0.32, 1);
   --tafaseel-ease-drawer: cubic-bezier(0.32, 0.72, 0, 1);
+}
 
+:where(.theme-tafaseel-luxury, body) {
   background: var(--tafaseel-silver);
   color: var(--tafaseel-ink);
 
@@ -385,7 +387,7 @@
   }
 }
 
-.theme-tafaseel-luxury {
+:where(.theme-tafaseel-luxury, body) {
   .s-block {
     margin-top: clamp(28px, 5vw, 64px);
   }
@@ -501,8 +503,8 @@
   }
 
   .tafaseel-btn,
-  .theme-tafaseel-luxury .s-product-card,
-  .theme-tafaseel-luxury .product-entry,
+  :where(.theme-tafaseel-luxury, body) .s-product-card,
+  :where(.theme-tafaseel-luxury, body) .product-entry,
   .tafaseel-motion-card {
     transition: none;
   }
@@ -533,7 +535,7 @@
 }
 
 @media (max-width: 768px) {
-  .theme-tafaseel-luxury {
+  :where(.theme-tafaseel-luxury, body) {
     #mainnav {
       backdrop-filter: none;
     }
