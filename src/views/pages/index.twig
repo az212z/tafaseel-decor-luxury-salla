@@ -10,6 +10,7 @@
     {% set hero_enabled = theme.settings.get('tafaseel_hero_enabled', true) %}
 
     {% if hero_enabled %}
+        {% include 'components.home.tafaseel-critical-style' %}
         {% include 'components.home.tafaseel-hero' %}
     {% endif %}
 
