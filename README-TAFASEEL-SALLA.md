@@ -15,7 +15,7 @@
 ## التشغيل المحلي
 
 ```bash
-cd /Users/ali/Documents/tafaseel-decor-twilight-clean
+cd /Users/ali/Documents/tafaseel-decor-luxury-salla
 pnpm install
 pnpm production
 ```

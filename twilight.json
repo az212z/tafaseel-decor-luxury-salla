@@ -3,7 +3,7 @@
         "ar": "تفاصيل الديكور الفاخر",
         "en": "Tafaseel Decor Luxury"
     },
-    "repository": "https://github.com/az212z/tafaseel-decor-twilight",
+    "repository": "https://github.com/az212z/tafaseel-decor-luxury-salla",
     "author_email": "tfasyl37@gmail.com",
     "features": [
         "mega-menu",
@@ -296,13 +296,13 @@
             },
             "icon": "sicon-store2",
             "path": "home.tafaseel-hero",
-            "image": "https://raw.githubusercontent.com/az212z/tafaseel-decor-twilight/master/public/images/tafaseel/hero.jpg",
+            "image": "https://raw.githubusercontent.com/az212z/tafaseel-decor-luxury-salla/master/public/images/tafaseel/hero.jpg",
             "fields": [
                 {
                     "type": "static",
                     "format": "description",
                     "id": "tafaseel-hero-preview",
-                    "value": "<div><img class='w-full' src='https://raw.githubusercontent.com/az212z/tafaseel-decor-twilight/master/public/images/tafaseel/hero.jpg'><h6>واجهة تفاصيل الديكور</h6><p>هيرو فاخر جاهز للواجهة الرئيسية مع تصنيفات سريعة، صور ديكورية، أزرار شراء وتواصل، وحركة دخول ناعمة مناسبة لهوية المتجر.</p></div>"
+                    "value": "<div><img class='w-full' src='https://raw.githubusercontent.com/az212z/tafaseel-decor-luxury-salla/master/public/images/tafaseel/hero.jpg'><h6>واجهة تفاصيل الديكور</h6><p>هيرو فاخر جاهز للواجهة الرئيسية مع تصنيفات سريعة، صور ديكورية، أزرار شراء وتواصل، وحركة دخول ناعمة مناسبة لهوية المتجر.</p></div>"
                 }
             ]
         },

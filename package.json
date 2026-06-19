@@ -1,11 +1,11 @@
 {
-  "name": "tafaseel-decor-twilight",
+  "name": "tafaseel-decor-luxury-salla",
   "version": "1.0.3",
   "description": "Luxury Arabic Salla Twilight theme for Tafaseel Decor",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/az212z/tafaseel-decor-twilight.git"
+    "url": "git+https://github.com/az212z/tafaseel-decor-luxury-salla.git"
   },
   "scripts": {
     "preinstall": "npx only-allow pnpm",
