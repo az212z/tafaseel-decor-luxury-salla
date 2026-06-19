@@ -1,11 +1,11 @@
 {
-  "name": "theme-raed",
+  "name": "tafaseel-decor-twilight",
   "version": "1.0.3",
-  "description": "Salla Theme",
+  "description": "Luxury Arabic Salla Twilight theme for Tafaseel Decor",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/SallaApp/theme-raed.git"
+    "url": "git+https://github.com/az212z/tafaseel-decor-twilight.git"
   },
   "scripts": {
     "preinstall": "npx only-allow pnpm",
