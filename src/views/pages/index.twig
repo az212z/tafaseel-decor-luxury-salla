@@ -1,0 +1,124 @@
+{#
+| Variable         | Type       | Description                                                         |
+|------------------|------------|---------------------------------------------------------------------|
+| page             | object     |                                                                     |
+| page.title       | string     | *could be html                                                      |
+| page.slug        | string     | ex: "cat.show"                                                      |
+#}
+{% extends "layouts.master" %}
+{% block content %}
+    {% set tafaseel_whatsapp = store.contacts.whatsapp ?? store.contacts.mobile ?? '966558113005' %}
+    {% set tafaseel_whatsapp_clean = tafaseel_whatsapp|replace({'+':'', ' ':'', '-':'', '(':'', ')':''}) %}
+    {% set hero_enabled = theme.settings.get('tafaseel_hero_enabled', true) %}
+
+    {% if hero_enabled %}
+        <section class="tafaseel-hero" style="--tafaseel-hero-image: url('{{ 'images/tafaseel/hero.jpg' | asset }}')">
+            <div class="tafaseel-hero__bg" aria-hidden="true"></div>
+            <div class="container tafaseel-hero__inner">
+                <div class="tafaseel-hero__copy" data-tafaseel-reveal>
+                    <h1>تفاصيل الديكور</h1>
+                    <p>
+                        لوحات جدارية وورق حائط مصممة لتصنع نقطة جذب هادئة في البيت والمكتب،
+                        بخامات واضحة وضمان ألوان يصل إلى 3 سنوات.
+                    </p>
+                    <div class="tafaseel-hero__actions">
+                        <a class="tafaseel-btn tafaseel-btn--primary" href="#tafaseel-collection">
+                            <span>تسوق المجموعة</span>
+                            <i class="sicon-keyboard_arrow_left" aria-hidden="true"></i>
+                        </a>
+                        <a class="tafaseel-btn tafaseel-btn--ghost" href="https://wa.me/{{ tafaseel_whatsapp_clean }}" rel="noopener" target="_blank">
+                            <span>استشارة مقاس</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="tafaseel-hero__gallery" data-tafaseel-reveal>
+                    <figure class="tafaseel-hero__frame tafaseel-hero__frame--main">
+                        <img src="{{ 'images/tafaseel/room.jpg' | asset }}" alt="لوحة جدارية فاخرة من تفاصيل الديكور" loading="eager" fetchpriority="high">
+                    </figure>
+                    <figure class="tafaseel-hero__frame tafaseel-hero__frame--float tafaseel-motion-card">
+                        <img src="{{ 'images/tafaseel/product-floral-01.jpg' | asset }}" alt="لوحة ورد بتدرجات هادئة" loading="lazy">
+                    </figure>
+                    <figure class="tafaseel-hero__frame tafaseel-hero__frame--tall tafaseel-motion-card">
+                        <img src="{{ 'images/tafaseel/product-horse-01.jpg' | asset }}" alt="لوحة خيول بتكوين عصري" loading="lazy">
+                    </figure>
+                </div>
+            </div>
+        </section>
+    {% endif %}
+
+    <section class="tafaseel-category-strip" aria-label="تصنيفات تفاصيل الديكور" data-tafaseel-reveal>
+        <div class="container tafaseel-category-strip__inner">
+            <a href="#tafaseel-collection">الورد</a>
+            <a href="#tafaseel-collection">تجريدي</a>
+            <a href="#tafaseel-collection">خيول</a>
+            <a href="#tafaseel-collection">ورق الحائط</a>
+            <a href="#tafaseel-collection">لوحات حجم كبير</a>
+        </div>
+    </section>
+
+    <section id="tafaseel-collection" class="tafaseel-home-intro">
+        <div class="container tafaseel-home-intro__inner" data-tafaseel-reveal>
+            <div>
+                <h2>اختيارات مصممة لتظهر في المساحة، لا لتملأها فقط.</h2>
+                <p>
+                    مجموعة مختارة للصالات، المداخل، غرف النوم، والمكاتب؛ بألوان هادئة
+                    وحضور بصري يعطي الجدار قيمة من غير ازدحام.
+                </p>
+            </div>
+            <a class="tafaseel-link" href="https://wa.me/{{ tafaseel_whatsapp_clean }}" rel="noopener" target="_blank">
+                اطلب تنسيق خاص للمقاس
+                <i class="sicon-keyboard_arrow_left" aria-hidden="true"></i>
+            </a>
+        </div>
+    </section>
+
+    {% component home %}
+
+    <section class="tafaseel-quality">
+        <div class="container tafaseel-quality__grid">
+            <article data-tafaseel-reveal>
+                <i class="sicon-medal" aria-hidden="true"></i>
+                <h3>ضمان ألوان</h3>
+                <p>مواد مختارة للوضوح والثبات مع عناية بتفاصيل الطباعة والتغليف.</p>
+            </article>
+            <article data-tafaseel-reveal>
+                <i class="sicon-truck" aria-hidden="true"></i>
+                <h3>تجهيز مرتب</h3>
+                <p>تجربة شراء مختصرة مع عرض واضح للمقاسات والأسعار وحالة المنتج.</p>
+            </article>
+            <article data-tafaseel-reveal>
+                <i class="sicon-image" aria-hidden="true"></i>
+                <h3>هوية بصرية</h3>
+                <p>مظهر أقرب لمعرض ديكور حديث، مع صور كبيرة ومساحات قراءة مريحة.</p>
+            </article>
+            <article data-tafaseel-reveal>
+                <i class="sicon-chat" aria-hidden="true"></i>
+                <h3>استشارة قبل الطلب</h3>
+                <p>إرشاد سريع لاختيار المقاس والقطعة الأنسب لطبيعة الجدار.</p>
+            </article>
+        </div>
+    </section>
+
+    <section class="tafaseel-studio">
+        <div class="container tafaseel-studio__inner">
+            <div class="tafaseel-studio__media" data-tafaseel-reveal>
+                <img src="{{ 'images/tafaseel/showroom.jpg' | asset }}" alt="تنسيق داخلي للوحات تفاصيل الديكور" loading="lazy">
+            </div>
+            <div class="tafaseel-studio__copy" data-tafaseel-reveal>
+                <h2>متجر يبدو كاختيار مصمم داخلي، وليس كقائمة منتجات عادية.</h2>
+                <p>
+                    اختر القطعة حسب طابع المساحة: ورد ناعم لغرف المعيشة، تجريدي للمداخل
+                    الحديثة، وخيارات خيول وورق حائط للمساحات التي تحتاج حضورًا أقوى.
+                </p>
+                <a class="tafaseel-btn tafaseel-btn--primary" href="#main-content">
+                    العودة للتسوق
+                    <i class="sicon-keyboard_arrow_left" aria-hidden="true"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+{% endblock %}
+{% block scripts %}
+    <script defer src="{{ 'home.js' | asset }}"></script>
+{% endblock %}
