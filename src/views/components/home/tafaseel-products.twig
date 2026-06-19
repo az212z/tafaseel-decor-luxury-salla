@@ -1,5 +1,39 @@
 {% set tafaseel_whatsapp = store.contacts.whatsapp ?? store.contacts.mobile ?? '966558113005' %}
 {% set tafaseel_whatsapp_clean = tafaseel_whatsapp|replace({'+':'', ' ':'', '-':'', '(':'', ')':''}) %}
+{% set tafaseel_spaces = [
+    {
+        'name': 'الصالة',
+        'title': 'جدار صالة متوازن',
+        'text': 'لوحة كبيرة أو زوج متناغم يعطي المساحة حضورًا واضحًا من غير ازدحام.',
+        'meta': 'تجريدي + لوحات كبيرة',
+        'url': '#tafaseel-large',
+        'image': 'https://cdn.salla.sa/gZrqEE/64cc7fb0-ccb1-4bb8-ac2f-1e63e8c4fa02-500x500-XS6J6gCt8vtJgt9IC71ad2MpO5WatzVPSMOFxew8.jpg'
+    },
+    {
+        'name': 'المدخل',
+        'title': 'انطباع أول فندقي',
+        'text': 'قطعة خط عربي أو تكوين تجريدي يعرّف هوية المكان من أول نظرة.',
+        'meta': 'خط عربي + تجريدي',
+        'url': '#tafaseel-arabic',
+        'image': 'https://cdn.salla.sa/gZrqEE/26a3c315-f8c1-4805-8c18-6823aa60bdd4-500x496.9696969697-RSyzcda52gwLPZNZNJtb0GDMsqT7ZwqgDkPwAxdz.jpg'
+    },
+    {
+        'name': 'غرفة النوم',
+        'title': 'هدوء ناعم وراقي',
+        'text': 'درجات وردية ومحايدة تناسب المساحات الهادئة وتخفف صرامة الجدار.',
+        'meta': 'ورد + ألوان هادئة',
+        'url': '#tafaseel-floral',
+        'image': 'https://cdn.salla.sa/gZrqEE/1e65f02a-7119-431f-ac15-e00fa4d08908-500x498.86363636364-7BWHNVo87rNG36T7ZrR5G2HApHnOWeo6pxbgpt0N.jpg'
+    },
+    {
+        'name': 'المكتب',
+        'title': 'تركيز معاصر',
+        'text': 'اختيارات خطوط وتجريد بسيطة تعطي خلفية عمل نظيفة في الاجتماعات والتصوير.',
+        'meta': 'تجريدي + أحجام متوسطة',
+        'url': '#tafaseel-abstract',
+        'image': 'https://cdn.salla.sa/gZrqEE/665ff406-4447-4270-8055-801ea2d199b6-500x500-6uDeHYKYK5jBDDxvt81AFT91WYovJVCanWJnmdds.jpg'
+    }
+] %}
 {% set tafaseel_categories = [
     {
         'id': 'tafaseel-floral',
@@ -36,6 +70,9 @@
         'category': 'الورد',
         'title': 'لوحة ورد جدارية',
         'subtitle': 'كانفس مقاوم للرطوبة مع ضمان ألوان 3 سنوات',
+        'room': 'غرفة نوم أو صالة هادئة',
+        'tone': 'ناعم',
+        'badge': 'اختيار هادئ',
         'url': 'https://decorationdetails.com/لوحة-جدارية/p1960654971',
         'image': 'https://cdn.salla.sa/gZrqEE/1e65f02a-7119-431f-ac15-e00fa4d08908-500x498.86363636364-7BWHNVo87rNG36T7ZrR5G2HApHnOWeo6pxbgpt0N.jpg'
     },
@@ -44,6 +81,9 @@
         'category': 'تجريدي',
         'title': 'لوحة فنية تجريدية',
         'subtitle': 'تكوين حديث للمداخل والمكاتب وغرف الضيافة',
+        'room': 'مدخل أو مكتب',
+        'tone': 'معاصر',
+        'badge': 'الأكثر مرونة',
         'url': 'https://decorationdetails.com/لوحة-فنية/p761812267',
         'image': 'https://cdn.salla.sa/gZrqEE/665ff406-4447-4270-8055-801ea2d199b6-500x500-6uDeHYKYK5jBDDxvt81AFT91WYovJVCanWJnmdds.jpg'
     },
@@ -52,6 +92,9 @@
         'category': 'خيول',
         'title': 'لوحة خيل فنية',
         'subtitle': 'حضور بصري قوي لمساحات الاستقبال والجدران الكبيرة',
+        'room': 'مجلس أو استقبال',
+        'tone': 'قوي',
+        'badge': 'قطعة محورية',
         'url': 'https://decorationdetails.com/لوحة-فنية/p794573527',
         'image': 'https://cdn.salla.sa/gZrqEE/07b2e16f-9186-4ced-9e8d-0eacefb7a064-500x500-vOgwn6Waw6Cg3TPst7qbWkhMdBLi1HS4R1gSRHRk.jpg'
     },
@@ -60,6 +103,9 @@
         'category': 'ورق الحائط',
         'title': 'ورق حائط فاخر',
         'subtitle': 'خيار مناسب لتحويل الجدار إلى خلفية ديكور مكتملة',
+        'room': 'جدار تلفاز أو ضيافة',
+        'tone': 'خلفية كاملة',
+        'badge': 'تحويل سريع',
         'url': 'https://decorationdetails.com/ورق-حائط/p800021141',
         'image': 'https://cdn.salla.sa/gZrqEE/ccc34150-e20f-4e2b-bcb7-b33769ebe92f-500x500-KtOJymigdDp6FG3K1hkcKJXB5ifnxNHIhkk15EQY.jpg'
     },
@@ -68,6 +114,9 @@
         'category': 'خط عربي',
         'title': 'لوحات خط عربي',
         'subtitle': 'تفاصيل هادئة للصالات والمداخل بطابع عربي معاصر',
+        'room': 'مدخل أو مجلس',
+        'tone': 'أصيل',
+        'badge': 'هوية عربية',
         'url': 'https://decorationdetails.com/لوحات-جدارية/p1600485683',
         'image': 'https://cdn.salla.sa/gZrqEE/26a3c315-f8c1-4805-8c18-6823aa60bdd4-500x496.9696969697-RSyzcda52gwLPZNZNJtb0GDMsqT7ZwqgDkPwAxdz.jpg'
     },
@@ -76,8 +125,37 @@
         'category': 'لوحات كبيرة',
         'title': 'لوحة جدارية كبيرة',
         'subtitle': 'قطعة محورية للمساحات الواسعة وغرف الجلوس الرسمية',
+        'room': 'صالة واسعة',
+        'tone': 'بيان بصري',
+        'badge': 'للجدار الواسع',
         'url': 'https://decorationdetails.com/لوحة-جدارية/p204327651',
         'image': 'https://cdn.salla.sa/gZrqEE/64cc7fb0-ccb1-4bb8-ac2f-1e63e8c4fa02-500x500-XS6J6gCt8vtJgt9IC71ad2MpO5WatzVPSMOFxew8.jpg'
+    }
+] %}
+{% set tafaseel_wall_sets = [
+    {
+        'name': 'Soft Gallery',
+        'title': 'ورد هادئ مع خط عربي',
+        'text': 'تنسيق مناسب لغرف النوم والصالات الصغيرة عندما تحتاج المساحة دفء أخف.',
+        'url': '#tafaseel-floral',
+        'primary': 'https://cdn.salla.sa/gZrqEE/1e65f02a-7119-431f-ac15-e00fa4d08908-500x498.86363636364-7BWHNVo87rNG36T7ZrR5G2HApHnOWeo6pxbgpt0N.jpg',
+        'secondary': 'https://cdn.salla.sa/gZrqEE/26a3c315-f8c1-4805-8c18-6823aa60bdd4-500x496.9696969697-RSyzcda52gwLPZNZNJtb0GDMsqT7ZwqgDkPwAxdz.jpg'
+    },
+    {
+        'name': 'Modern Entry',
+        'title': 'تجريدي للمداخل والمكاتب',
+        'text': 'اختيار نظيف يناسب الخلفيات الهادئة والمداخل التي تحتاج تركيزًا بصريًا.',
+        'url': '#tafaseel-abstract',
+        'primary': 'https://cdn.salla.sa/gZrqEE/665ff406-4447-4270-8055-801ea2d199b6-500x500-6uDeHYKYK5jBDDxvt81AFT91WYovJVCanWJnmdds.jpg',
+        'secondary': 'https://cdn.salla.sa/gZrqEE/64cc7fb0-ccb1-4bb8-ac2f-1e63e8c4fa02-500x500-XS6J6gCt8vtJgt9IC71ad2MpO5WatzVPSMOFxew8.jpg'
+    },
+    {
+        'name': 'Statement Wall',
+        'title': 'خيول وورق حائط للحضور القوي',
+        'text': 'تنسيق للمجالس وجدران التلفاز عندما يكون الهدف قطعة تترك أثرًا واضحًا.',
+        'url': '#tafaseel-horses',
+        'primary': 'https://cdn.salla.sa/gZrqEE/07b2e16f-9186-4ced-9e8d-0eacefb7a064-500x500-vOgwn6Waw6Cg3TPst7qbWkhMdBLi1HS4R1gSRHRk.jpg',
+        'secondary': 'https://cdn.salla.sa/gZrqEE/ccc34150-e20f-4e2b-bcb7-b33769ebe92f-500x500-KtOJymigdDp6FG3K1hkcKJXB5ifnxNHIhkk15EQY.jpg'
     }
 ] %}
 
@@ -96,6 +174,37 @@
             <span class="tafaseel-token tafaseel-token--mist"></span>
             <span class="tafaseel-token tafaseel-token--ice"></span>
             <span class="tafaseel-token tafaseel-token--clay"></span>
+        </div>
+    </div>
+</section>
+
+<section class="tafaseel-spaces" aria-labelledby="tafaseel-spaces-title">
+    <div class="container">
+        <div class="tafaseel-section-head tafaseel-section-head--split" data-tafaseel-reveal>
+            <div>
+                <span class="tafaseel-kicker">تسوق حسب الغرفة</span>
+                <h2 id="tafaseel-spaces-title">ابدأ من المساحة، ثم اختر القطعة التي تناسبها.</h2>
+            </div>
+            <a class="tafaseel-link" href="https://wa.me/{{ tafaseel_whatsapp_clean }}" rel="noopener" target="_blank">
+                أرسل صورة الجدار
+                <i class="sicon-keyboard_arrow_left" aria-hidden="true"></i>
+            </a>
+        </div>
+
+        <div class="tafaseel-spaces__rail" aria-label="اختيارات حسب المساحة">
+            {% for space in tafaseel_spaces %}
+                <a class="tafaseel-space-card tafaseel-motion-card" href="{{ space.url }}" data-tafaseel-reveal>
+                    <span class="tafaseel-space-card__media">
+                        <img src="{{ space.image }}" alt="{{ space.title }}" loading="lazy">
+                    </span>
+                    <span class="tafaseel-space-card__copy">
+                        <small>{{ space.name }}</small>
+                        <strong>{{ space.title }}</strong>
+                        <em>{{ space.meta }}</em>
+                        <span>{{ space.text }}</span>
+                    </span>
+                </a>
+            {% endfor %}
         </div>
     </div>
 </section>
@@ -120,6 +229,31 @@
     </div>
 </section>
 
+<section class="tafaseel-wall-sets" aria-labelledby="tafaseel-wall-sets-title">
+    <div class="container">
+        <div class="tafaseel-section-head" data-tafaseel-reveal>
+            <span class="tafaseel-kicker">تنسيقات جاهزة</span>
+            <h2 id="tafaseel-wall-sets-title">جدران مقترحة تعطي العميل قرارًا أسرع.</h2>
+        </div>
+
+        <div class="tafaseel-wall-sets__grid">
+            {% for wall_set in tafaseel_wall_sets %}
+                <a class="tafaseel-wall-set tafaseel-motion-card" href="{{ wall_set.url }}" data-tafaseel-reveal>
+                    <span class="tafaseel-wall-set__art" aria-hidden="true">
+                        <img class="tafaseel-wall-set__art-main" src="{{ wall_set.primary }}" alt="" loading="lazy">
+                        <img class="tafaseel-wall-set__art-side" src="{{ wall_set.secondary }}" alt="" loading="lazy">
+                    </span>
+                    <span class="tafaseel-wall-set__copy">
+                        <small>{{ wall_set.name }}</small>
+                        <strong>{{ wall_set.title }}</strong>
+                        <span>{{ wall_set.text }}</span>
+                    </span>
+                </a>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
 <section class="tafaseel-curated-products" aria-labelledby="tafaseel-products-title">
     <div class="container">
         <div class="tafaseel-section-head tafaseel-section-head--split" data-tafaseel-reveal>
@@ -137,11 +271,20 @@
                 <article id="{{ product.anchor }}" class="tafaseel-product-card" data-tafaseel-reveal>
                     <a class="tafaseel-product-card__image" href="{{ product.url }}" aria-label="{{ product.title }}">
                         <img src="{{ product.image }}" alt="{{ product.title }}" loading="lazy">
+                        <span class="tafaseel-product-card__badge">{{ product.badge }}</span>
+                        <span class="tafaseel-product-card__quick">
+                            <small>{{ product.room }}</small>
+                            <small>{{ product.tone }}</small>
+                        </span>
                     </a>
                     <div class="tafaseel-product-card__body">
                         <span>{{ product.category }}</span>
                         <h3>{{ product.title }}</h3>
                         <p>{{ product.subtitle }}</p>
+                        <div class="tafaseel-product-card__meta" aria-label="خصائص المنتج">
+                            <small>{{ product.room }}</small>
+                            <small>{{ product.tone }}</small>
+                        </div>
                         <div class="tafaseel-product-card__footer">
                             <strong>السعر حسب المقاس</strong>
                             <a href="{{ product.url }}">
@@ -153,6 +296,33 @@
                 </article>
             {% endfor %}
         </div>
+    </div>
+</section>
+
+<section class="tafaseel-advisor container" aria-label="استشارة اختيار المقاس" data-tafaseel-reveal>
+    <div class="tafaseel-advisor__inner">
+        <div>
+            <span class="tafaseel-kicker">قبل الطلب</span>
+            <h2>اختيار المقاس يبدأ من عرض الجدار، ارتفاع الأثاث، ودرجة الإضاءة.</h2>
+        </div>
+        <ol class="tafaseel-advisor__steps">
+            <li>
+                <strong>01</strong>
+                <span>صوّر الجدار كاملًا مع الأثاث القريب منه.</span>
+            </li>
+            <li>
+                <strong>02</strong>
+                <span>حدد عرض الجدار أو المقاس التقريبي للمساحة الفارغة.</span>
+            </li>
+            <li>
+                <strong>03</strong>
+                <span>اختر بين قطعة واحدة كبيرة أو تنسيق قطعتين متناسقتين.</span>
+            </li>
+        </ol>
+        <a class="tafaseel-btn tafaseel-btn--primary" href="https://wa.me/{{ tafaseel_whatsapp_clean }}" rel="noopener" target="_blank">
+            ابدأ الاستشارة
+            <i class="sicon-keyboard_arrow_left" aria-hidden="true"></i>
+        </a>
     </div>
 </section>
 

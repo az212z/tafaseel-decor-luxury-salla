@@ -259,8 +259,11 @@
 
   .tafaseel-home-intro,
   .tafaseel-identity,
+  .tafaseel-spaces,
   .tafaseel-categories,
+  .tafaseel-wall-sets,
   .tafaseel-curated-products,
+  .tafaseel-advisor,
   .tafaseel-quality,
   .tafaseel-studio {
     padding-block: clamp(56px, 8vw, 96px);
@@ -324,7 +327,9 @@
   .tafaseel-token--ice { background: var(--tafaseel-ice); }
   .tafaseel-token--clay { background: var(--tafaseel-clay); }
 
+  .tafaseel-spaces__rail,
   .tafaseel-categories__grid,
+  .tafaseel-wall-sets__grid,
   .tafaseel-products-grid,
   .tafaseel-quality__grid {
     display: grid;
@@ -336,6 +341,12 @@
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
+  .tafaseel-wall-sets__grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .tafaseel-space-card,
+  .tafaseel-wall-set,
   .tafaseel-category-card,
   .tafaseel-product-card,
   .tafaseel-quality article,
@@ -345,6 +356,96 @@
     border-radius: 8px;
     background: var(--tafaseel-pearl);
     box-shadow: 0 18px 46px rgba(16, 24, 32, 0.08);
+  }
+
+  .tafaseel-space-card,
+  .tafaseel-wall-set {
+    display: grid;
+    color: var(--tafaseel-ink);
+    text-decoration: none;
+  }
+
+  .tafaseel-space-card__media,
+  .tafaseel-wall-set__art {
+    display: block;
+    overflow: hidden;
+    aspect-ratio: 1 / 0.72;
+    background: var(--tafaseel-ice);
+  }
+
+  .tafaseel-space-card__media img,
+  .tafaseel-wall-set__art img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .tafaseel-space-card__copy,
+  .tafaseel-wall-set__copy {
+    display: grid;
+    gap: 9px;
+    padding: 18px;
+  }
+
+  .tafaseel-space-card__copy small,
+  .tafaseel-wall-set__copy small {
+    color: var(--tafaseel-clay);
+    font-size: 12px;
+    font-weight: 900;
+  }
+
+  .tafaseel-space-card__copy strong,
+  .tafaseel-wall-set__copy strong {
+    color: var(--tafaseel-ink);
+    font-size: 21px;
+    font-weight: 900;
+    line-height: 1.25;
+  }
+
+  .tafaseel-space-card__copy em,
+  .tafaseel-space-card__copy span,
+  .tafaseel-wall-set__copy span {
+    color: rgba(16, 24, 32, 0.64);
+    font-size: 13px;
+    line-height: 1.7;
+  }
+
+  .tafaseel-space-card__copy em {
+    font-style: normal;
+    font-weight: 900;
+  }
+
+  .tafaseel-wall-set__art {
+    position: relative;
+    min-height: 290px;
+    background:
+      linear-gradient(90deg, rgba(16, 24, 32, 0.08) 1px, transparent 1px),
+      linear-gradient(0deg, rgba(16, 24, 32, 0.08) 1px, transparent 1px),
+      #eaf3f4;
+    background-size: 34px 34px;
+  }
+
+  .tafaseel-wall-set__art-main,
+  .tafaseel-wall-set__art-side {
+    position: absolute;
+    display: block;
+    border: 10px solid #fff;
+    border-radius: 4px;
+    box-shadow: 0 22px 52px rgba(16, 24, 32, 0.18);
+  }
+
+  .tafaseel-wall-set__art-main {
+    inset-inline-end: 14%;
+    inset-block-start: 36px;
+    width: 46%;
+    aspect-ratio: 0.74;
+  }
+
+  .tafaseel-wall-set__art-side {
+    inset-inline-start: 16%;
+    inset-block-start: 78px;
+    width: 34%;
+    aspect-ratio: 0.78;
   }
 
   .tafaseel-category-card {
@@ -387,9 +488,48 @@
   }
 
   .tafaseel-product-card__image {
+    position: relative;
     display: block;
     aspect-ratio: 1 / 0.86;
     background: #eaf6f8;
+  }
+
+  .tafaseel-product-card__badge,
+  .tafaseel-product-card__quick {
+    position: absolute;
+    z-index: 2;
+  }
+
+  .tafaseel-product-card__badge {
+    inset-block-start: 14px;
+    inset-inline-start: 14px;
+    border-radius: 999px;
+    padding: 7px 11px;
+    color: var(--tafaseel-ink);
+    font-size: 11px;
+    font-weight: 900;
+    background: rgba(255, 255, 255, 0.86);
+  }
+
+  .tafaseel-product-card__quick {
+    inset-inline: 14px;
+    inset-block-end: 14px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .tafaseel-product-card__quick small,
+  .tafaseel-product-card__meta small {
+    border-radius: 999px;
+    padding: 7px 10px;
+    font-size: 11px;
+    font-weight: 900;
+  }
+
+  .tafaseel-product-card__quick small {
+    color: #fff;
+    background: rgba(8, 17, 21, 0.74);
   }
 
   .tafaseel-product-card__body,
@@ -401,6 +541,19 @@
     color: var(--tafaseel-clay);
     font-size: 12px;
     font-weight: 900;
+  }
+
+  .tafaseel-product-card__meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 14px;
+  }
+
+  .tafaseel-product-card__meta small {
+    color: rgba(16, 24, 32, 0.62);
+    background: rgba(255, 255, 255, 0.72);
+    border: 1px solid var(--tafaseel-line);
   }
 
   .tafaseel-product-card__footer {
@@ -417,6 +570,61 @@
     color: var(--tafaseel-ink);
     font-weight: 900;
     text-decoration: none;
+  }
+
+  .tafaseel-advisor__inner {
+    display: grid;
+    grid-template-columns: minmax(0, 0.82fr) minmax(300px, 0.88fr) auto;
+    gap: clamp(20px, 4vw, 48px);
+    align-items: end;
+    border-radius: 8px;
+    padding: clamp(24px, 5vw, 48px);
+    background: var(--tafaseel-night);
+    box-shadow: var(--tafaseel-shadow);
+  }
+
+  .tafaseel-advisor__inner h2 {
+    margin: 0;
+    color: #fff;
+    font-size: clamp(28px, 3.6vw, 48px);
+    font-weight: 900;
+    line-height: 1.12;
+  }
+
+  .tafaseel-advisor__steps {
+    display: grid;
+    gap: 10px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .tafaseel-advisor__steps li {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 12px;
+    align-items: center;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 8px;
+    padding: 12px;
+    background: rgba(255, 255, 255, 0.06);
+  }
+
+  .tafaseel-advisor__steps strong {
+    display: grid;
+    width: 38px;
+    height: 38px;
+    place-items: center;
+    border-radius: 999px;
+    color: var(--tafaseel-night);
+    background: var(--tafaseel-mist);
+  }
+
+  .tafaseel-advisor__steps span {
+    color: rgba(255, 255, 255, 0.78);
+    font-size: 13px;
+    font-weight: 800;
+    line-height: 1.65;
   }
 
   .tafaseel-live-products {
@@ -457,10 +665,17 @@
       min-height: 420px;
     }
 
+    .tafaseel-spaces__rail,
     .tafaseel-categories__grid,
+    .tafaseel-wall-sets__grid,
     .tafaseel-products-grid,
     .tafaseel-quality__grid {
       grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .tafaseel-advisor__inner {
+      grid-template-columns: 1fr;
+      align-items: start;
     }
   }
 
@@ -490,7 +705,9 @@
       margin-top: -24px;
     }
 
+    .tafaseel-spaces__rail,
     .tafaseel-categories__grid,
+    .tafaseel-wall-sets__grid,
     .tafaseel-products-grid,
     .tafaseel-quality__grid {
       grid-template-columns: 1fr;
