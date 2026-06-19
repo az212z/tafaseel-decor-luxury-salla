@@ -11,8 +11,6 @@
         "color",
         "breadcrumb",
         "unite-cards-height",
-        "component-tafaseel-hero",
-        "component-latest-products",
         "component-featured-products",
         "component-fixed-banner",
         "component-fixed-products",
@@ -292,19 +290,98 @@
     "components": [
         {
             "key": "7f7d9c90-7863-4d70-97d5-8974733e5712",
+            "name": "tafaseel-hero",
             "title": {
                 "en": "Tafaseel Decor Hero",
                 "ar": "واجهة تفاصيل الديكور"
             },
             "icon": "sicon-store2",
             "path": "home.tafaseel-hero",
-            "image": "https://raw.githubusercontent.com/az212z/tafaseel-decor-luxury-salla/master/public/images/tafaseel/hero.jpg",
+            "image": "https://raw.githubusercontent.com/az212z/tafaseel-decor-luxury-salla/master/src/assets/images/tafaseel/hero.jpg",
             "fields": [
                 {
                     "type": "static",
                     "format": "description",
                     "id": "tafaseel-hero-preview",
-                    "value": "<div><img class='w-full' src='https://raw.githubusercontent.com/az212z/tafaseel-decor-luxury-salla/master/public/images/tafaseel/hero.jpg'><h6>واجهة تفاصيل الديكور</h6><p>هيرو فاخر جاهز للواجهة الرئيسية مع تصنيفات سريعة، صور ديكورية، أزرار شراء وتواصل، وحركة دخول ناعمة مناسبة لهوية المتجر.</p></div>"
+                    "value": "<div><img class='w-full' src='https://raw.githubusercontent.com/az212z/tafaseel-decor-luxury-salla/master/src/assets/images/tafaseel/hero.jpg'><h6>واجهة تفاصيل الديكور</h6><p>هيرو فاخر جاهز للواجهة الرئيسية مع تصنيفات سريعة، صور ديكورية، أزرار شراء وتواصل، وحركة دخول ناعمة مناسبة لهوية المتجر.</p></div>"
+                },
+                {
+                    "type": "string",
+                    "icon": "sicon-format-text-alt",
+                    "label": "عنوان الواجهة",
+                    "multilanguage": true,
+                    "id": "hero_title",
+                    "value": "تفاصيل الديكور",
+                    "required": false,
+                    "format": "text",
+                    "minLength": 2,
+                    "maxLength": 70
+                },
+                {
+                    "type": "string",
+                    "icon": "sicon-typography",
+                    "label": "وصف الواجهة",
+                    "multilanguage": true,
+                    "id": "hero_description",
+                    "value": "لوحات جدارية وورق حائط مصممة لتصنع نقطة جذب هادئة في البيت والمكتب، بخامات واضحة وضمان ألوان يصل إلى 3 سنوات.",
+                    "required": false,
+                    "format": "textarea",
+                    "minLength": 0,
+                    "maxLength": 180
+                },
+                {
+                    "type": "string",
+                    "icon": "sicon-image",
+                    "label": "صورة الواجهة الرئيسية",
+                    "id": "hero_image",
+                    "value": "https://raw.githubusercontent.com/az212z/tafaseel-decor-luxury-salla/master/src/assets/images/tafaseel/room.jpg",
+                    "required": false,
+                    "format": "image",
+                    "description": "المقاس المقترح 1200x1500 بكسل"
+                },
+                {
+                    "type": "string",
+                    "icon": "sicon-image",
+                    "label": "صورة المنتج الأولى",
+                    "id": "accent_image",
+                    "value": "https://raw.githubusercontent.com/az212z/tafaseel-decor-luxury-salla/master/src/assets/images/tafaseel/product-floral-01.jpg",
+                    "required": false,
+                    "format": "image",
+                    "description": "المقاس المقترح 900x1200 بكسل"
+                },
+                {
+                    "type": "string",
+                    "icon": "sicon-image",
+                    "label": "صورة المنتج الثانية",
+                    "id": "tall_image",
+                    "value": "https://raw.githubusercontent.com/az212z/tafaseel-decor-luxury-salla/master/src/assets/images/tafaseel/product-horse-01.jpg",
+                    "required": false,
+                    "format": "image",
+                    "description": "المقاس المقترح 900x1200 بكسل"
+                },
+                {
+                    "type": "string",
+                    "icon": "sicon-format-text-alt",
+                    "label": "نص زر التسوق",
+                    "multilanguage": true,
+                    "id": "primary_label",
+                    "value": "تسوق المجموعة",
+                    "required": false,
+                    "format": "text",
+                    "minLength": 2,
+                    "maxLength": 30
+                },
+                {
+                    "type": "string",
+                    "icon": "sicon-format-text-alt",
+                    "label": "نص زر واتساب",
+                    "multilanguage": true,
+                    "id": "secondary_label",
+                    "value": "استشارة مقاس",
+                    "required": false,
+                    "format": "text",
+                    "minLength": 2,
+                    "maxLength": 30
                 }
             ]
         },

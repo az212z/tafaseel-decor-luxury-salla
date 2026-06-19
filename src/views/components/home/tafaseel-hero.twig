@@ -1,35 +1,40 @@
 {% set tafaseel_whatsapp = store.contacts.whatsapp ?? store.contacts.mobile ?? '966558113005' %}
 {% set tafaseel_whatsapp_clean = tafaseel_whatsapp|replace({'+':'', ' ':'', '-':'', '(':'', ')':''}) %}
+{% set tafaseel_component = component is defined ? component : null %}
+{% set tafaseel_title = tafaseel_component and tafaseel_component.hero_title ? tafaseel_component.hero_title : 'تفاصيل الديكور' %}
+{% set tafaseel_description = tafaseel_component and tafaseel_component.hero_description ? tafaseel_component.hero_description : 'لوحات جدارية وورق حائط مصممة لتصنع نقطة جذب هادئة في البيت والمكتب، بخامات واضحة وضمان ألوان يصل إلى 3 سنوات.' %}
+{% set tafaseel_hero_image = tafaseel_component and tafaseel_component.hero_image ? tafaseel_component.hero_image : 'images/tafaseel/room.jpg' | asset %}
+{% set tafaseel_accent_image = tafaseel_component and tafaseel_component.accent_image ? tafaseel_component.accent_image : 'images/tafaseel/product-floral-01.jpg' | asset %}
+{% set tafaseel_tall_image = tafaseel_component and tafaseel_component.tall_image ? tafaseel_component.tall_image : 'images/tafaseel/product-horse-01.jpg' | asset %}
+{% set tafaseel_primary_label = tafaseel_component and tafaseel_component.primary_label ? tafaseel_component.primary_label : 'تسوق المجموعة' %}
+{% set tafaseel_secondary_label = tafaseel_component and tafaseel_component.secondary_label ? tafaseel_component.secondary_label : 'استشارة مقاس' %}
 
 <section class="tafaseel-hero" style="--tafaseel-hero-image: url('{{ 'images/tafaseel/hero.jpg' | asset }}')">
     <div class="tafaseel-hero__bg" aria-hidden="true"></div>
     <div class="container tafaseel-hero__inner">
         <div class="tafaseel-hero__copy" data-tafaseel-reveal>
-            <h1>تفاصيل الديكور</h1>
-            <p>
-                لوحات جدارية وورق حائط مصممة لتصنع نقطة جذب هادئة في البيت والمكتب،
-                بخامات واضحة وضمان ألوان يصل إلى 3 سنوات.
-            </p>
+            <h1>{{ tafaseel_title }}</h1>
+            <p>{{ tafaseel_description }}</p>
             <div class="tafaseel-hero__actions">
                 <a class="tafaseel-btn tafaseel-btn--primary" href="#tafaseel-collection">
-                    <span>تسوق المجموعة</span>
+                    <span>{{ tafaseel_primary_label }}</span>
                     <i class="sicon-keyboard_arrow_left" aria-hidden="true"></i>
                 </a>
                 <a class="tafaseel-btn tafaseel-btn--ghost" href="https://wa.me/{{ tafaseel_whatsapp_clean }}" rel="noopener" target="_blank">
-                    <span>استشارة مقاس</span>
+                    <span>{{ tafaseel_secondary_label }}</span>
                 </a>
             </div>
         </div>
 
         <div class="tafaseel-hero__gallery" data-tafaseel-reveal>
             <figure class="tafaseel-hero__frame tafaseel-hero__frame--main">
-                <img src="{{ 'images/tafaseel/room.jpg' | asset }}" alt="لوحة جدارية فاخرة من تفاصيل الديكور" loading="eager" fetchpriority="high">
+                <img src="{{ tafaseel_hero_image }}" alt="لوحة جدارية فاخرة من تفاصيل الديكور" loading="eager" fetchpriority="high">
             </figure>
             <figure class="tafaseel-hero__frame tafaseel-hero__frame--float tafaseel-motion-card">
-                <img src="{{ 'images/tafaseel/product-floral-01.jpg' | asset }}" alt="لوحة ورد بتدرجات هادئة" loading="lazy">
+                <img src="{{ tafaseel_accent_image }}" alt="لوحة ورد بتدرجات هادئة" loading="lazy">
             </figure>
             <figure class="tafaseel-hero__frame tafaseel-hero__frame--tall tafaseel-motion-card">
-                <img src="{{ 'images/tafaseel/product-horse-01.jpg' | asset }}" alt="لوحة خيول بتكوين عصري" loading="lazy">
+                <img src="{{ tafaseel_tall_image }}" alt="لوحة خيول بتكوين عصري" loading="lazy">
             </figure>
         </div>
     </div>

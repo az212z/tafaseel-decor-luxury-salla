@@ -9,9 +9,8 @@
 {% block content %}
     {% set hero_enabled = theme.settings.get('tafaseel_hero_enabled', true) %}
 
-    {% if hero_enabled and not theme.settings.get('tafaseel_hero_rendered', false) %}
+    {% if hero_enabled %}
         {% include 'components.home.tafaseel-hero' %}
-        {% set _tafaseel_hero_rendered = theme.settings.set('tafaseel_hero_rendered', true) %}
     {% endif %}
 
     {% component home %}
