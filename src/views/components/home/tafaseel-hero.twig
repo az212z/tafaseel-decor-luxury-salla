@@ -3,13 +3,13 @@
 {% set tafaseel_component = component is defined ? component : null %}
 {% set tafaseel_title = tafaseel_component and tafaseel_component.hero_title ? tafaseel_component.hero_title : 'تفاصيل الديكور' %}
 {% set tafaseel_description = tafaseel_component and tafaseel_component.hero_description ? tafaseel_component.hero_description : 'لوحات جدارية وورق حائط بتفاصيل هادئة، خامات كانفس مقاومة، وضمان ألوان 3 سنوات.' %}
-{% set tafaseel_hero_image = tafaseel_component and tafaseel_component.hero_image ? tafaseel_component.hero_image : 'images/tafaseel/room.jpg' | asset %}
-{% set tafaseel_accent_image = tafaseel_component and tafaseel_component.accent_image ? tafaseel_component.accent_image : 'images/tafaseel/product-floral-01.jpg' | asset %}
-{% set tafaseel_tall_image = tafaseel_component and tafaseel_component.tall_image ? tafaseel_component.tall_image : 'images/tafaseel/product-horse-01.jpg' | asset %}
+{% set tafaseel_hero_image = tafaseel_component and tafaseel_component.hero_image ? tafaseel_component.hero_image : 'https://cdn.salla.sa/gZrqEE/64cc7fb0-ccb1-4bb8-ac2f-1e63e8c4fa02-500x500-XS6J6gCt8vtJgt9IC71ad2MpO5WatzVPSMOFxew8.jpg' %}
+{% set tafaseel_accent_image = tafaseel_component and tafaseel_component.accent_image ? tafaseel_component.accent_image : 'https://cdn.salla.sa/gZrqEE/1e65f02a-7119-431f-ac15-e00fa4d08908-500x498.86363636364-7BWHNVo87rNG36T7ZrR5G2HApHnOWeo6pxbgpt0N.jpg' %}
+{% set tafaseel_tall_image = tafaseel_component and tafaseel_component.tall_image ? tafaseel_component.tall_image : 'https://cdn.salla.sa/gZrqEE/07b2e16f-9186-4ced-9e8d-0eacefb7a064-500x500-vOgwn6Waw6Cg3TPst7qbWkhMdBLi1HS4R1gSRHRk.jpg' %}
 {% set tafaseel_primary_label = tafaseel_component and tafaseel_component.primary_label ? tafaseel_component.primary_label : 'تسوق المجموعة' %}
 {% set tafaseel_secondary_label = tafaseel_component and tafaseel_component.secondary_label ? tafaseel_component.secondary_label : 'استشارة مقاس' %}
 
-<section class="tafaseel-hero" style="--tafaseel-hero-image: url('{{ 'images/tafaseel/hero.jpg' | asset }}')">
+<section class="tafaseel-hero" style="--tafaseel-hero-image: url('{{ tafaseel_hero_image }}')">
     <div class="tafaseel-hero__bg" aria-hidden="true"></div>
     <div class="container tafaseel-hero__inner">
         <div class="tafaseel-hero__copy" data-tafaseel-reveal>
